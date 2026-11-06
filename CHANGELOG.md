@@ -2,122 +2,112 @@
 
 All notable changes to the Forza 21:9 Ultrawide Patch are documented here.
 
-## [v1.2.1] — FM5 Vehicle Image Aspect Ratio Fix
-
-### Fixed
-- Fixed horizontally stretched vehicle images in the **Car Dealer**, **My Cars**, **Marketplace**, and **livery selection popup** in Forza Motorsport 5.
-- Removed the additional width correction from these locations because Azimuth 1.0 already renders the images with the correct aspect ratio.
-- Preserved the width correction for vehicle images in **Free Play, multiplayer lobbies, player cards, lobby garage popups, Hopper selection, and profiles**, where the game still renders images too narrow.
-
-### Other Changes
-- No other changes compared to v1.2.0.
-
-## [v1.2.0] — Expanded Ultrawide Support & Quality of Life Improvements
+## [1.3.0] - Forza Motorsport 6 Support
 
 ### Added
-- Added support for **Azimuth 1.0.3**, while maintaining compatibility with Azimuth 1.0.2.
-- Added resolution-aware UI layout generation for Forza Motorsport 5 during installation.
-- Added optional per-game desktop shortcuts that launch games directly without opening the Azimuth launcher.
-- Added game-specific shortcut icons using the corresponding game logos.
-- Added an English-language classic ZIP installer with `Install.bat` and `Uninstall.bat`.
-- Added folder selection for the Azimuth installation directory.
-- Added resolution selection and individual yes/no selection for each supported game in the classic installer.
+
+- **Forza Motorsport 6 support (1.0.0.44):** Added full 21:9 ultrawide UI support for Forza Motorsport 6.
+- **Ultrawide menus:** Menu headers and controller button bars now span the full screen width, while menu content remains centred with full-width backgrounds.
+- **HUD positioning:** HUD elements are repositioned towards the edges of ultrawide displays.
+- **Adapted interface screens:** Loading screens, dialogs, tutorials and message boxes receive ultrawide adjustments.
+- **Post-race rewards:** The rewards panel is repositioned towards the screen edge.
+- **Vehicle image corrections:** Corrected squeezed vehicle images in My Cars, next race screens, Free Play, multiplayer lobbies and profiles.
+- **16:9 screen handling:** Screens that remain in their original aspect ratio receive clean black side bars.
+- **Full frame rate in menus:** Prevents FM6 from unnecessarily halving the configured frame rate in menus (e.g. 90 FPS instead of 45 FPS).
+- **Restored start screen:** Fixed the missing "Press A" prompt by making FM6 wait until the intro video has finished playing.
+- **Improved intro audio timing:** Menu music now starts after the logos and intro video have finished. When the intro is disabled in the game options, music starts immediately as usual.
+- **FM6 desktop shortcut:** Added a dedicated desktop shortcut with the corresponding game logo.
 
 ### Changed
-- Expanded FM5 ultrawide UI support beyond the previously fixed 3440×1440 layout.
-- FM5 UI layouts are now calculated for the selected resolution during installation, including 2560×1080, 3440×1440 and 3840×1600. 32:9 is theoretically supported but has not been confirmed through testing.
-- Improved the installation and uninstallation workflow.
-- Continued using a single, unmodified `azimuth.exe`, preserving compatibility with FH2 Extra Options.
+
+- **Azimuth 1.0.4 compatibility:** Added support for Azimuth 1.0.4 while retaining compatibility with Azimuth 1.0.2 and 1.0.3.
+- **Installer:** Added Forza Motorsport 6 to the game selection and configuration options.
+- **Patch updates:** Improved compatibility with previously installed versions of the patch's `dinput8.dll`, making updates from earlier releases easier.
+- **FH2 and Fast & Furious loading backgrounds:** Loading and fast-travel backgrounds now fill the entire screen again. The additional black side bars previously added by the patch have been removed because Azimuth 1.0.4 now handles these backgrounds correctly.
 
 ### Fixed
-- **FM5 garage and pre-race frame rate:** Prevented the game from halving the configured frame rate in the garage and pre-race screens. These screens can now run at the full configured frame rate.
-- **FM5 main menu:** Fixed the animated header lines so they extend to the right edge.
-- **FM5 main menu:** Corrected the dot pattern positioning so it sits at the right edge, matching the original UI.
 
-### Configuration
-- Added the `full_rate` option under the `[fm5]` section in `azimuth_21x9.ini`.
-- Set `full_rate=0` to disable the FM5 full-frame-rate correction.
+- **Forza Motorsport 5 start screen:** The loading indicator on the original 16:9 start screen now stays within the 16:9 area.
+- **Forza Motorsport 5 vehicle images:** Existing aspect-ratio corrections remain active in locations where the game still displays vehicle images too narrowly. Corrections are no longer applied to locations where Azimuth already displays them correctly.
+
+---
+
+## [1.2.1] - Forza Motorsport 5 Vehicle Image Fixes
+
+### Fixed
+
+- Fixed horizontally stretched vehicle images in the Car Dealer, My Cars, Marketplace and livery selection popup.
+- Removed unnecessary width corrections in these locations because Azimuth 1.0 already displays the images with the correct aspect ratio.
+- Retained width corrections in Free Play, multiplayer lobbies, player cards, lobby garage popups, Hopper selection and profiles, where vehicle images were still appearing too narrow.
+
+No other changes compared to v1.2.0.
+
+---
+
+## [1.2.0] - Resolution-aware Forza Motorsport 5 UI
+
+### Added
+
+- Added support for Azimuth 1.0.3 while retaining compatibility with Azimuth 1.0.2.
+- FM5 UI layouts are now calculated during installation for the selected display resolution instead of being fixed to 3440×1440.
+- Added optional desktop shortcuts for configured games, allowing them to launch directly without opening the Azimuth launcher.
+- Added English batch installers (`Install.bat` and `Uninstall.bat`) to the classic ZIP package.
+- Added a folder picker for selecting the Azimuth installation directory.
+
+### Changed
+
+- FM5 garage and pre-race screens now run at the full configured frame rate instead of halving it.
+- FM5 animated main menu header lines now extend to the right edge, with the dot pattern matching the original UI layout.
+- Improved installation and per-game configuration handling.
+
+### Improved
+
+- Resolution-aware UI calculations now cover resolutions such as 2560×1080, 3440×1440 and 3840×1600.
+- Added the option to disable the FM5 full-frame-rate correction through `azimuth_21x9.ini`.
+
+---
+
+## [1.1.0] - Forza Motorsport 5 Support
+
+### Added
+
+- Added support for Forza Motorsport 5 (1.0.0.20).
+- Added per-game patch enable/disable functionality.
+- Added support for Azimuth 1.0.2 and 1.0.3.
+- Added a standalone EXE installer alongside the classic ZIP package.
+
+### Improved
+
+- Introduced runtime patching through a `dinput8.dll` proxy without modifying `azimuth.exe`.
+- Improved UI scaling, aspect-ratio handling and clipping corrections.
+- Improved FM5 UI layouts for ultrawide displays.
+
+---
+
+## [1.0.1] - Fast & Furious UI Fix
+
+### Fixed
+
+- Fixed the vehicle confirmation screen layout in Forza Horizon 2 Presents Fast & Furious after selecting a car.
+- Repositioned manufacturer branding and vehicle statistics to improve alignment.
+
+No changes to the Forza Horizon 2 patch or installer/uninstaller.
+
+---
+
+## [1.0.0] - Initial Release
+
+### Added
+
+- Initial 21:9 ultrawide UI support for Forza Horizon 2 (1.0.0.64).
+- Initial 21:9 ultrawide UI support for Forza Horizon 2 Presents Fast & Furious (1.0.0.6).
+- Repositioned HUD elements for ultrawide displays.
+- Improved UI layouts while keeping supported menus and dialogs centred.
+- Added black side bars for selected 16:9 loading content.
+- Added an installer with file verification and automatic backups.
+- Added an uninstaller to restore original files.
+- Added optional compatibility adjustments for FH2 Extra Options 0.2.98.
 
 ### Compatibility
-- Azimuth 1.0.2
-- Azimuth 1.0.3
 
-Supported games:
-- Forza Horizon 2 — `1.0.0.64`
-- Forza Horizon 2 Presents Fast & Furious — `1.0.0.6`
-- Forza Motorsport 5 — `1.0.0.20`
-
-### Notes
-- 3440×1440 remains the primary tested ultrawide resolution.
-- Other FM5 resolutions are calculated during installation but have not all been tested.
-- The 32:9 layout is theoretical and remains unverified.
-- Forza Horizon 3 and Forza Motorsport 6 are planned for future releases.
-
----
-
-## [v1.1.0] — Expanded Game Support
-
-### Added
-- Added support for **Forza Motorsport 5** (version `1.0.0.20`).
-- Added a standalone EXE installer alongside the classic ZIP package with batch scripts.
-- Added per-game patch enable/disable support.
-
-### Changed
-- Updated compatibility to **Azimuth 1.0.2 and 1.0.3**.
-- Introduced runtime in-memory patching through a `dinput8.dll` proxy without modifying `azimuth.exe`.
-- Improved UI scaling, aspect ratio handling and clipping fixes.
-- Expanded the patch beyond Forza Horizon 2 and Fast & Furious.
-
-### Fixed
-- Added additional UI and aspect ratio fixes for Forza Motorsport 5.
-- Improved ultrawide UI handling for supported games.
-
-### Known Issues at Release
-- The Forza Motorsport 5 UI fix was limited to **3440×1440**.
-- Performance drops in the garage and pre-race screens remained unresolved.
-- Other ultrawide resolutions had not all been tested.
-
-### Requirements
-- Azimuth 1.0.2 or 1.0.3.
-
-Supported games:
-- Forza Horizon 2 — `1.0.0.64`
-- Forza Horizon 2 Presents Fast & Furious — `1.0.0.6`
-- Forza Motorsport 5 — `1.0.0.20`
-
----
-
-## [v1.0.1] — Fast & Furious UI Fix
-
-### Fixed
-- Fixed the 21:9 layout of the vehicle confirmation screen displayed after selecting a car in Forza Horizon 2 Presents Fast & Furious.
-- Repositioned manufacturer branding and vehicle statistics to better fit ultrawide displays.
-
-### Unchanged
-- No changes to the Forza Horizon 2 UI patch.
-- Installer and uninstaller remained unchanged.
-
-### Requirements
-- Azimuth 0.9.10.
-
----
-
-## [v1.0.0] — Initial Release
-
-### Added
-- Initial ultrawide UI patch for Forza Horizon 2 and Forza Horizon 2 Presents Fast & Furious.
-- Repositioned HUD elements for 21:9 ultrawide displays.
-- Adjusted UI layouts across menus and gameplay screens.
-- Kept menus, dialogs, videos and loading screens centred in 16:9 where supported.
-- Added black side bars during FH2 fast travel to hide the world loading outside the original 16:9 video area.
-- Installer with file verification and automatic backups.
-- Uninstaller to restore the original files.
-- Optional compatibility adjustment for FH2 Extra Options 0.2.98.
-
-### Tested Games
-- Forza Horizon 2 — `1.0.0.64`
-- Forza Horizon 2 Presents Fast & Furious — `1.0.0.6`
-
-### Requirements
-- Azimuth 0.9.10.
-- Primary tested resolution: 3440×1440 (21:9).
+- Tested with Azimuth 0.9.10.
