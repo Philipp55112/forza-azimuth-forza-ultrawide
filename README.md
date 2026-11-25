@@ -1,3 +1,21 @@
+
+<p align="center">
+  <img src="Header.png" alt="Forza 21:9 Ultrawide Patch" width="100%">
+</p>
+
+<p align="center">
+  <b>True 21:9 Ultrawide Support for Forza Games on PC</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Philipp55112/forza-azimuth-forza-ultrawide/releases">
+    <img src="https://img.shields.io/badge/Download-v1.3.0-ff4b9b" alt="Download">
+  </a>
+  <img src="https://img.shields.io/badge/Platform-PC-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/Aspect_Ratio-21%3A9-cyan" alt="Aspect Ratio">
+  <img src="https://img.shields.io/badge/Status-Stable-brightgreen" alt="Status">
+</p>
+
 # Forza 21:9 Ultrawide Patch
 
 **True 21:9 ultrawide UI support for Xbox One Forza games running on PC through Azimuth.**
